@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organic Marketplace | Farm2Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Manrope', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .toast-notification {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }.add-btn-checkbox:checked ~ .add-btn-default { display: none; }
+        .add-btn-checkbox:checked ~ .add-btn-added { display: flex; }
+        .add-btn-checkbox:checked ~ .toast-trigger { display: flex; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased relative overflow-x-hidden">
+<div class="fixed top-20 right-4 z-[100] flex flex-col gap-3 pointer-events-none">
+</div>
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-8">
+<a class="flex items-center gap-2 shrink-0" href="#">
+<div class="bg-primary p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-white text-2xl">eco</span>
+</div>
+<h1 class="text-xl font-800 tracking-tight text-slate-900 dark:text-white">Farm2Feed</h1>
+</a>
+<div class="flex-1 max-w-2xl hidden md:flex items-center bg-slate-100 dark:bg-slate-800/50 rounded-xl px-4 py-2 border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-medium placeholder:text-slate-400" placeholder="Search organic mangoes, basmati rice, turmeric..." type="text"/>
+<div class="h-4 w-px bg-slate-300 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-500 uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Mumbai</span>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<a class="hidden lg:block text-sm font-semibold hover:text-primary transition-colors" href="#">Impact</a>
+<a class="hidden lg:block text-sm font-semibold hover:text-primary transition-colors" href="#">Our Farms</a>
+<div class="flex items-center gap-2">
+<a class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="shopping-cart.html">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-[10px] font-bold text-slate-900 px-1.5 py-0.5 rounded-full border-2 border-white dark:border-background-dark animate-pulse" id="cart-badge">3</span>
+</a>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<div class="bg-white dark:bg-background-dark/50 border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="index.html">
+<span class="material-symbols-outlined text-sm">home</span> Home
+        </a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white">Shop</span>
+</div>
+</div>
+<main class="max-w-7xl mx-auto px-4 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 shrink-0 space-y-8">
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-4">
+<div class="flex items-center gap-2 text-primary mb-2">
+<span class="material-symbols-outlined text-lg">volunteer_activism</span>
+<span class="text-xs font-bold uppercase tracking-wider">Direct Impact</span>
+</div>
+<p class="text-sm font-medium leading-relaxed opacity-80">Every ₹500 spent provides 1 meal to children in need.</p>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Categories</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">All Produce</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Fresh Vegetables</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Seasonal Fruits</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-slate-300 text-primary focus:ring-primary w-5 h-5" type="checkbox"/>
+<span class="text-sm font-semibold group-hover:text-primary transition-colors">Organic Grains</span>
+</label>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-400">Price Range</h3>
+<span class="text-xs font-bold text-primary">₹50 - ₹2000</span>
+</div>
+<input class="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-primary" max="2000" min="50" type="range"/>
+</div>
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Farm Location</h3>
+<select class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm font-semibold py-3 px-4 focus:ring-2 focus:ring-primary/30">
+<option>All India</option>
+<option>Maharashtra (Western Ghats)</option>
+<option>Karnataka (Coorg Region)</option>
+<option>Punjab (Organic Belt)</option>
+<option>Kerala (Spice Coast)</option>
+</select>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl">
+<div class="flex flex-col">
+<span class="text-sm font-bold">NPOP Certified</span>
+<span class="text-[10px] text-slate-400">Indian Organic Standard</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+<div>
+<h2 class="text-3xl font-800 text-slate-900 dark:text-white">Seasonal Harvest</h2>
+<p class="text-slate-500 text-sm font-medium">Showing 24 organic products from local farmers</p>
+</div>
+<div class="flex items-center gap-2 bg-white dark:bg-slate-800 p-1 rounded-lg border border-slate-200 dark:border-slate-700">
+<button class="p-2 bg-primary/20 text-primary rounded-md"><span class="material-symbols-outlined text-lg">grid_view</span></button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">list</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fresh organic Alphonso mangoes in a basket" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeX9fUEmDjbaqmZrXmlOqaPLJjSwu4tmM3nbqYjn_r-KrTIYjWY0jaPiXn14sFFR2e7A1zWVqsR1_AmZXCRFLtdy0Td7GtNzEzGO-cXCge9mMqCCfK1kkk3gOH-dgEgz7TzdzGUAu6oUcuEs0mGpICTV0nNrBj36qeV49eaGEGjg5SC3vGdgE2ywwBig9skLj31Qa3hOGsv17PwqEdQ2QQMTtI7pye3PLAbPdUm9PbTq_qfR1MrkRRo4FfC-ld18vOvysWMnRBewD"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary text-slate-900 text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter">Bestseller</span>
+<span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary fill-1">verified</span> Certified
+                            </span>
+</div>
+<button class="absolute top-3 right-3 p-2 rounded-full bg-white/50 backdrop-blur hover:bg-white text-slate-900 transition-all">
+<span class="material-symbols-outlined text-lg leading-none">favorite</span>
+</button>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Alphonso Mangoes</h3>
+<span class="text-primary font-800 text-lg">₹450</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 1 Dozen (Box)
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Ratnagiri
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">4.9 (124)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-1" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-1">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Premium long grain organic basmati rice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6XGRuf3j7eD2JerWR5wguPSQQSYxEPW7QvMrVu15wxEsqd7EB_2atCbF_sdbZPsM4ZaU6HPSShFCJJ4w1QEVa3ovOkgnCooPRsN48jf-jOGHWbKmQZL7p9yqEgAPCq89RMelifvhM6jJJaxckr6ArWfdtxXxgb1d3juA6UIXcKsR-AU_Qyb4ex4af6rFOW1VHCQHbEZg3aJJ9jCXyOPS-FNgPAejIRM_87Tocn6U-73oy9B2JSpUCBwNmZdhAi1HYYV_ZHlOWRmyP"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary fill-1">verified</span> Certified
+                            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Basmati Rice (Long)</h3>
+<span class="text-primary font-800 text-lg">₹185</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 1kg Pack
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Haryana
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">4.7 (89)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-2" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-2">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Fresh bunches of organic spinach leaves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQocLnBi7bL3wz2G-MOAd09Ig0zgQDPJdj5bBTSOjSZ3hYnwT8H1dw-ahqM6NUEYoKZFZ0QxvGjvZyhQNtkuZZ0D6Fmk1kNARc0VSH_nTwr0Uen9wtWdEHS0NISzoNpWpyZWbZK-x89K9zud49nLmnu_Ac00rRz2LIqBF4H0hf8x9aY4_4Lybl0k3zGigI3hLIVXcSK3WRzExIPVaLBYz1cyRSGWOEbkTNptpMpJNBciwmXgk6bivlkTgQWOKjpZnPJ3fLc40TuPor"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-primary/30 backdrop-blur-sm text-primary text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter">Harvested Today</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Desi Palak (Spinach)</h3>
+<span class="text-primary font-800 text-lg">₹40</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 250g Bunch
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Local Farm
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">5.0 (52)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-3" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-3">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Organic raw turmeric root" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmb1HdSG_71RDKPovC7S1gLbGgsssJfkEff5nPzoDSJ8KyLlWH_H01hOMU24L_LrtF3iJYCU2g7XDjQe5ful00woxfKS9TSheILK1B0gn43PkNC0j_3KCjf4oE-GSGPYmHo8lBxrpYDrBJGHY396qMnpoL0twgQUEGc0DLG_SuK8kLszHKF6aThiOR9XFsrglnu5sOWtQP6VV8uNt6V86n-3W0YShaNkUvNCIevI8-pfdJJCDYONJdYzur-Nl0-qfAAl96oQutMEfc"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary fill-1">verified</span> Certified
+                            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Raw Lakadong Turmeric</h3>
+<span class="text-primary font-800 text-lg">₹120</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 100g Root
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Meghalaya
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">4.8 (310)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-4" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-4">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Crunchy organic farm carrots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCUO9ZGRq1AoIhSKxPOxTU-U8vJJ04KgyaMGtPB83PUuUPQcRU54FzXrHoM-mJhDyCV_HW04MheXgsj65I93RRp0uvaKouoJ4k4B3Zhz0RFZm-qVHVKQsySTgkMytWIgEwAl9S3phfss9bhOJPoMcAqs5_8l7e2IOclCLAvAabQ2rxByMjvArhmk2HHLs4pF3MJ8eP6PkXUEM7QwGCXSv74SdqQ4iMziUmdhBvREN3P8NEojCiTqFtzBLfNamo-sJExy6sc-WuiiRh"/>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Red Farm Carrots</h3>
+<span class="text-primary font-800 text-lg">₹65</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 500g Pack
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Pune
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">4.5 (242)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-5" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-5">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col">
+<div class="relative aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Whole green moong organic lentils" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnq_R9NaA2kznY_dUnYrhaCrcqCPBakjnK2HfbLQv3u1cltHn4U0HAX5CYyTIY8c6t_-ilANlDiy_ijX8g6gtVvBJgbuJWoLYvKuvnjlweOa6d3RogalfzOSOdjWCbDv9dGpDnB7jZ1h3uOAF4m7bUUJcnJjNkCciwwIbvdc_8Hle-lov2RYgsZ9afMVh0y7MyvgyBxg_xVw35SPH56ckJxQIJItDE635mmfqAmfm3DtT1oNRybTNS1n9x3i337UnhAc2zOLu5BK2e"/>
+<div class="absolute top-3 left-3 flex flex-col gap-2">
+<span class="bg-white/90 backdrop-blur text-slate-900 text-[10px] font-800 px-2 py-1 rounded-full uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary fill-1">verified</span> Certified
+                            </span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors">Whole Green Moong</h3>
+<span class="text-primary font-800 text-lg">₹145</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-sm">scale</span> 500g Pack
+                            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+<span class="material-symbols-outlined text-sm">location_on</span> Karnataka
+                        </div>
+<div class="mt-auto pt-4 border-t border-slate-50 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-xs font-bold">4.6 (198)</span>
+</div>
+<div class="relative">
+<input class="sr-only peer add-btn-checkbox" id="add-6" type="checkbox"/>
+<label class="cursor-pointer bg-primary hover:bg-primary/90 text-slate-900 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all active:scale-95 peer-checked:bg-slate-900 peer-checked:text-white" for="add-6">
+<span class="material-symbols-outlined text-lg peer-checked:hidden">add_shopping_cart</span>
+<span class="peer-checked:hidden">Add</span>
+<span class="material-symbols-outlined text-lg hidden peer-checked:inline-block">check_circle</span>
+<span class="hidden peer-checked:inline-block">Added</span>
+</label>
+<div class="fixed top-24 right-6 pointer-events-none hidden peer-checked:flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-[100] toast-notification border border-slate-700">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-bold">Item added to cart</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 bg-slate-900 dark:bg-slate-800 text-white dark:text-primary rounded-xl font-bold hover:bg-slate-800 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
+                    Load More Harvest <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-12 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 opacity-50">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="text-sm font-bold">© 2024 Farm2Feed India Foundation. Supporting 500+ Organic Farmers.</span>
+</div>
+<div class="flex gap-8 text-sm font-bold text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Vendor Registration</a>
+</div>
+</div>
+</footer>
+
+</body></html>

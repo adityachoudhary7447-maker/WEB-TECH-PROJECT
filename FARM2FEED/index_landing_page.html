@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farm2Feed | Organic Farm to Table &amp; Hunger Relief</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Manrope', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(246, 248, 246, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .section-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<header class="sticky top-0 z-50 glass-nav border-b border-primary/10 px-6 lg:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-2 text-primary group" href="#">
+<span class="material-symbols-outlined text-3xl font-bold group-hover:scale-110 transition-transform">eco</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold tracking-tight">Farm2Feed</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#marketplace">Shop</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#our-mission">Our Mission</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#impact">Impact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-white dark:bg-slate-800 rounded-lg px-3 py-1.5 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400" placeholder="Search organic produce..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2 text-sm font-bold bg-primary text-background-dark rounded-lg hover:brightness-110 transition-all">Sign Up</button>
+<div class="relative group">
+<button class="p-2 flex items-center justify-center bg-primary/10 text-slate-900 dark:text-slate-100 rounded-lg hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-background-dark text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section class="relative w-full min-h-[85vh] flex items-center px-6 lg:px-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background-light via-background-light/80 to-transparent z-10"></div>
+<img alt="Indian Organic Farm" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHIp15NjyVCVeA0mrF3lkGxKNqhAH5bEtKTITKW_RMAYRH7bvUu4HXkia4qsCapbeuqwjjT9R51LKf0n3V5keKQFcJiujmiNzGmF1N0xXxKF-aRSkUwF9ddxaeqsg3NJx2Gqd9ujNV4JFSCGofWoL9nfAMdiYQVa9f_Asvu-0ZToOavmLXXcI1cNAJ9Ru6xSzpW0b5dg-oUntqwzv3aWzGUv9AFWK6XCJbqr5NXaz9Ultx5b3heLRwoCiQaAUKN2P4p_2yreuud_Qh"/>
+</div>
+<div class="relative z-20 max-w-2xl">
+<span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-primary/20 text-emerald-800 dark:text-primary rounded-full">
+                Direct from Indian Soil
+            </span>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6">
+                Fresh Produce, <span class="text-primary">Zero Hunger.</span>
+</h1>
+<p class="text-lg text-slate-700 dark:text-slate-300 mb-10 leading-relaxed">
+                Buy premium pesticide-free organic produce directly from local farmers. For every basket you purchase, we donate a nutritious meal to an Indian family in need.
+            </p>
+<div class="flex flex-wrap gap-4">
+<a class="px-8 py-4 bg-primary text-background-dark font-bold text-lg rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform inline-flex items-center justify-center" href="#marketplace">
+                    Shop Now
+                </a>
+<a class="px-8 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold text-lg rounded-xl hover:bg-slate-50 transition-colors inline-flex items-center justify-center" href="#impact">
+                    View Our Impact
+                </a>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-12 -mt-16 relative z-30 scroll-mt-24" id="impact">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-primary/5 flex items-center gap-6">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">volunteer_activism</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Meals Donated</p>
+<h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">128,450+</h3>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-primary/5 flex items-center gap-6">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">agriculture</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Farmers Empowered</p>
+<h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">840+</h3>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-primary/5 flex items-center gap-6">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">compost</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Organic Acres</p>
+<h3 class="text-3xl font-extrabold text-slate-900 dark:text-white">2,100+</h3>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-24 bg-white dark:bg-slate-900 scroll-mt-20" id="how-it-works">
+<div class="max-w-7xl mx-auto text-center mb-16">
+<h2 class="text-4xl font-extrabold mb-4">Our Simple Circle of Goodness</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">We've built a transparent bridge between healthy living and social impact. Here is how your daily groceries make a difference.</p>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center group">
+<div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-emerald-800 dark:text-primary group-hover:text-background-dark">shopping_basket</span>
+</div>
+<h3 class="text-xl font-bold mb-3">1. Shop Organic</h3>
+<p class="text-slate-600 dark:text-slate-400">Choose from a wide variety of seasonal fruits, vegetables, and grains grown without chemicals.</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-emerald-800 dark:text-primary group-hover:text-background-dark">handshake</span>
+</div>
+<h3 class="text-xl font-bold mb-3">2. Support Local Farmers</h3>
+<p class="text-slate-600 dark:text-slate-400">We pay fair prices directly to small-scale Indian farmers, bypassing middlemen and ensuring livelihoods.</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-emerald-800 dark:text-primary group-hover:text-background-dark">restaurant</span>
+</div>
+<h3 class="text-xl font-bold mb-3">3. We Donate a Meal</h3>
+<p class="text-slate-600 dark:text-slate-400">For every transaction, we work with local NGOs to provide a nutritious meal to those battling hunger.</p>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-24 bg-background-light dark:bg-background-dark scroll-mt-20" id="marketplace">
+<div class="max-w-7xl mx-auto flex items-end justify-between mb-12">
+<div>
+<h2 class="text-4xl font-extrabold mb-2">Seasonal Harvest</h2>
+<p class="text-slate-600 dark:text-slate-400">Freshly picked from our partner farms this morning.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                View Full Store <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img alt="Organic Mangoes" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgLBZjLiiWqlDF6RSQ2XaPpg-Z8DdfZSopBwJtvCVsGL10MKGkK9uNt-SmYExqKEuK_0x3RD5FTFeWIEHkfj-ETpuS81Vhfof6vX5wSkHt36r66fz67AP5OplnKW59zjrYMztxK6SXq0FRjbz3zui_L5YbmdACP-xPKm7q2u_b3ZcKcxrkoPujWnjEyeBJSeuuq7zzmXyhdA2e4f19b7hQ3XNZ1zePqamiLakkawitlyJe2aTtz0x_M9CGfSWQP8IoQ3MaMY2C7rIU"/>
+<span class="absolute top-3 left-3 bg-primary text-background-dark text-xs font-bold px-2 py-1 rounded">Best Seller</span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-lg">Alphonso Mangoes</h4>
+<span class="text-primary font-bold">₹450/dz</span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Ratnagiri Special, Grade A Quality</p>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-background-dark transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img alt="Fresh Turmeric" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8Hg5shR6TbtkQV3IjzaCxrbG7EHn-vsgHuV1Tv1OCwxktulAIN6fXSr5Y5p4LZVMlkB2Jht_m6FH23LQ2V5MYrKOur6I_itqyeav0B4XK3WYy-eHRF1h1V9I-VDiwU4PyvF1BDS2ZjsDDSZQm771neomq7xWY8h65-KMj5FZfI3Zp04xR-RQuicQXb4ykWXyy2JpFQOdy6TqMWNLaliwXQl5dR5W7uAd-a_J4H6iiMwM9iQmxRSWfwEbYzWX7yQvNKWzVOlbuixOZ"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-lg">Organic Turmeric</h4>
+<span class="text-primary font-bold">₹120/kg</span>
+</div>
+<p class="text-slate-500 text-sm mb-4">High Curcumin content, Lakadong variety</p>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-background-dark transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img alt="Basmati Rice" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsCLvs4gf4viKliC3jZAofaHWXLASciG-Bl7nUpwyP_qyt_qlQH0zIrAMFuirjqe2uezQh_v2gotml-mT_u1t5nyYBYI0fdLvZzq-k-klLwtuDOfiq7lnr6kz0cbAIbfZWmCw0S4lHWikHBGmKZ1tySumobr4wZk3vJpnJNh9nfCMnVcLc_-0Jul_U7OnQlezhgnzwOB9fsrjboFZQz0jP4GrNp5RxJkc4wF9rc2VrWuFQ8j-GFM4_DnJsDfV4K8YhP-QcqnJb5vY3"/>
+<span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-2 py-1 rounded">Organic</span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-lg">Basmati Rice</h4>
+<span class="text-primary font-bold">₹185/kg</span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Traditional unpolished long-grain rice</p>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-background-dark transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 dark:border-slate-700">
+<div class="relative h-48 overflow-hidden">
+<img alt="Organic Carrots" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdtFNY7pDhkW2tOZ2RCUmTJASjIlofFLO5lmwRDzNKRlv_ikt4C_g5aB-r1PBeKgxp3BFRf8vN4i52txT28wxsoYzlDuwr6R5aqlS59qVE_QnImV3oVpvoArn_muGx51NBPQoDpNDyREVCrCKE7Wr_YdM5xQMqxNsjMQ_t2pOtZFRL4waWYmOZphAWDn-bZsoUMaUBn86QZbxWme50bMDLUtwQmBqnVrCtNJ6cZQlCQ_dBtQzuje3vWHCI2vJm0ExYoLWdvqtCkwD"/>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-lg">Heritage Carrots</h4>
+<span class="text-primary font-bold">₹80/kg</span>
+</div>
+<p class="text-slate-500 text-sm mb-4">Farm-fresh, crunchy and naturally sweet</p>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-bold hover:bg-primary hover:text-background-dark transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-24 scroll-mt-20" id="our-mission">
+<div class="max-w-7xl mx-auto bg-emerald-950 rounded-[2.5rem] p-12 lg:p-20 relative overflow-hidden text-center text-white">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500 rounded-full blur-[100px]"></div>
+</div>
+<h2 class="text-4xl lg:text-6xl font-extrabold mb-8 relative z-10 leading-tight">
+                Join the movement for a <br/><span class="text-primary">Healthy and Hunger-Free</span> India.
+            </h2>
+<p class="text-emerald-100 text-lg lg:text-xl max-w-2xl mx-auto mb-12 relative z-10">
+                Every meal you enjoy at your table helps put a plate in front of someone who needs it most. Start your subscription today.
+            </p>
+<div class="flex flex-wrap justify-center gap-6 relative z-10">
+<button class="px-10 py-5 bg-primary text-background-dark font-extrabold text-xl rounded-2xl hover:scale-105 transition-transform">
+                    Join Farm2Feed Today
+                </button>
+<button class="px-10 py-5 bg-transparent border-2 border-white/20 hover:bg-white/10 font-bold text-xl rounded-2xl transition-all">
+                    Become a Partner Farmer
+                </button>
+</div>
+</div>
+</section>
+<section class="px-6 lg:px-20 py-24 bg-white dark:bg-slate-900 border-t border-primary/10" id="thank-you-section">
+<div class="max-w-4xl mx-auto text-center">
+<div class="w-24 h-24 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
+<span class="material-symbols-outlined text-5xl">check_circle</span>
+</div>
+<h2 class="text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">Thank You for Your Order!</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mb-8">
+                Your fresh organic produce is being packed with care. Because of this purchase, <strong class="text-emerald-600 dark:text-primary">1 nutritious meal</strong> will be delivered to a family in need through our partner NGOs.
+            </p>
+<div class="bg-primary/5 rounded-2xl p-8 mb-10 border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="text-left">
+<h4 class="font-bold text-xl mb-1">Track Your Social Impact</h4>
+<p class="text-slate-500 text-sm">See exactly where your donated meal goes.</p>
+</div>
+<a class="px-8 py-3 bg-primary text-background-dark font-bold rounded-xl hover:brightness-110 transition-all flex items-center gap-2" href="#impact">
+                    Go to Impact <span class="material-symbols-outlined">insights</span>
+</a>
+</div>
+<a class="text-primary font-bold flex items-center justify-center gap-2 hover:underline" href="#marketplace">
+                Continue Shopping <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="px-6 lg:px-20 py-20 bg-white dark:bg-slate-900 border-t border-primary/10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-primary mb-6">
+<span class="material-symbols-outlined text-3xl font-bold">eco</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-extrabold">Farm2Feed</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 mb-6">Empowering Indian farmers and feeding the nation with sustainable, organic produce.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-background-dark">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-background-dark">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:text-background-dark">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Shop</h4>
+<ul class="space-y-4 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#marketplace">Vegetables</a></li>
+<li><a class="hover:text-primary transition-colors" href="#marketplace">Fruits</a></li>
+<li><a class="hover:text-primary transition-colors" href="#marketplace">Grains &amp; Pulses</a></li>
+<li><a class="hover:text-primary transition-colors" href="#marketplace">Organic Spices</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Company</h4>
+<ul class="space-y-4 text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#our-mission">Our Mission</a></li>
+<li><a class="hover:text-primary transition-colors" href="#impact">Impact Reports</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Partner Farms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-6">Newsletter</h4>
+<p class="text-slate-500 dark:text-slate-400 mb-4 text-sm">Get seasonal updates and impact stories directly in your inbox.</p>
+<form class="flex flex-col gap-3">
+<input class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border-none focus:ring-2 focus:ring-primary text-sm" placeholder="Your email address" type="email"/>
+<button class="w-full py-3 bg-primary text-background-dark font-bold rounded-xl hover:brightness-110 transition-all">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="max-w-7xl mx-auto border-t border-slate-100 dark:border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-400 text-sm">© 2024 Farm2Feed India Private Limited. All rights reserved.</p>
+<div class="flex gap-8 text-sm text-slate-400">
+<a class="hover:text-slate-600 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-slate-600 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-slate-600 transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+
+</body></html>

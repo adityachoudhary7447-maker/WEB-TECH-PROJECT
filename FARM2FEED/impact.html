@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farm2Feed | Connected Impact Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #13ec5b33;
+            border-radius: 10px;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 border-r border-primary/10 bg-white dark:bg-background-dark/50 flex flex-col shrink-0">
+<div class="p-6 flex flex-col gap-8 h-full">
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl font-bold">potted_plant</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-xl font-extrabold leading-none tracking-tight">Farm2Feed</h1>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Impact Portal</p>
+</div>
+</div>
+<div class="space-y-1">
+<p class="px-4 text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Main Menu</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-600 dark:text-slate-400 font-semibold group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">home</span>
+<span class="text-sm">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-600 dark:text-slate-400 font-semibold group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">shopping_basket</span>
+<span class="text-sm">Organic Shop</span>
+</a>
+</nav>
+</div>
+<div class="space-y-1 grow">
+<p class="px-4 text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Transparency Hub</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-slate-900 font-bold transition-all shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm">Impact Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-all text-slate-600 dark:text-slate-400 font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">analytics</span>
+<span class="text-sm">Deep Audit Logs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-all text-slate-600 dark:text-slate-400 font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">agriculture</span>
+<span class="text-sm">Farmer Network</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-primary/10 transition-all text-slate-600 dark:text-slate-400 font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">account_balance_wallet</span>
+<span class="text-sm">Financials</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-2xl border border-primary/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="relative">
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTZHs5d4W9JMzt2iVgCBCprRiW3UWiaKeFKD0ZzyqZG3WsiWUa7T7Bm0intK2h0OQdTWr2iZqHvyCPhZwoI9EOPn4VlUnjkCs01ByY1WZfHe3dju2Ona9HR1I6SSsmSc2jsiMMD8UU7pnPvZqMbJ1Ul2vYe0SAk__kZUpv8snvJ4T1KppGRT_zR4B3S3g4Zj3WlJwn9R_NfKvsHvhkzIihAv5N7X8yBr4uLKrWktd7XHVJeDx0D7m0ruBbuODGtevmy_m4RWItYCNk"/>
+</div>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-primary border-2 border-white dark:border-slate-800 rounded-full"></div>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-xs font-black truncate">NGO Administrator</span>
+<span class="text-[10px] text-slate-500 font-bold truncate">admin@farm2feed.in</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex flex-col items-center justify-center p-2 rounded-lg bg-white dark:bg-slate-700 hover:bg-primary/10 transition-colors border border-slate-200 dark:border-slate-600 group">
+<span class="material-symbols-outlined text-lg text-slate-400 group-hover:text-primary">settings</span>
+<span class="text-[9px] font-bold mt-1 uppercase">Settings</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 rounded-lg bg-white dark:bg-slate-700 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors border border-slate-200 dark:border-slate-600 group">
+<span class="material-symbols-outlined text-lg text-slate-400 group-hover:text-red-500">logout</span>
+<span class="text-[9px] font-bold mt-1 uppercase">Logout</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-16 border-b border-primary/10 bg-white dark:bg-background-dark/50 flex items-center justify-between px-8 z-10">
+<div class="flex items-center gap-6 flex-1">
+<h2 class="text-lg font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                    Live Impact Dashboard
+                </h2>
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-1.5 pl-10 pr-4 text-sm focus:ring-1 focus:ring-primary transition-all" placeholder="Search region or audit ID..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-tighter">Live Updates Enabled</span>
+</div>
+<button class="p-2 text-slate-500 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-slate-900"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+<span class="text-xs font-bold">Support</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8 bg-background-light dark:bg-background-dark">
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">India Impact Overview</h1>
+<p class="text-slate-500 font-medium">Tracking every grain from farm to plate across 14 states.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-slate-50 transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Full Audit (PDF)
+                    </button>
+<button class="px-4 py-2 bg-primary text-slate-900 rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-lg">share</span>
+                        Share Impact
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="text-[10px] font-bold text-primary px-2 py-1 bg-primary/10 rounded-full">+12.5%</span>
+</div>
+<p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Total Meals Donated</p>
+<h3 class="text-2xl font-black tracking-tight">1,254,082</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-blue-500/10 p-2 rounded-lg text-blue-500">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<span class="text-[10px] font-bold text-blue-500 px-2 py-1 bg-blue-500/10 rounded-full">98% Dist.</span>
+</div>
+<p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Funds Allocated</p>
+<h3 class="text-2xl font-black tracking-tight">₹45.20M</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-amber-500/10 p-2 rounded-lg text-amber-500">
+<span class="material-symbols-outlined">potted_plant</span>
+</div>
+<span class="text-[10px] font-bold text-amber-500 px-2 py-1 bg-amber-500/10 rounded-full">+8 New</span>
+</div>
+<p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Active Organic Farms</p>
+<h3 class="text-2xl font-black tracking-tight">854</h3>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-purple-500/10 p-2 rounded-lg text-purple-500">
+<span class="material-symbols-outlined">family_restroom</span>
+</div>
+<span class="text-[10px] font-bold text-purple-500 px-2 py-1 bg-purple-500/10 rounded-full">Direct Feed</span>
+</div>
+<p class="text-slate-500 text-xs font-bold uppercase tracking-wider mb-1">Families Supported</p>
+<h3 class="text-2xl font-black tracking-tight">12,400+</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-primary/5 shadow-sm flex flex-col min-h-[400px]">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-bold">Regional Distribution</h3>
+<p class="text-xs text-slate-500 font-medium">Density of support across Indian states</p>
+</div>
+<div class="flex items-center gap-4 text-xs">
+<div class="flex items-center gap-1.5 font-bold">
+<span class="w-3 h-3 rounded-full bg-primary/80"></span> High
+                            </div>
+<div class="flex items-center gap-1.5 font-bold">
+<span class="w-3 h-3 rounded-full bg-primary/40"></span> Medium
+                            </div>
+<div class="flex items-center gap-1.5 font-bold">
+<span class="w-3 h-3 rounded-full bg-primary/10"></span> Low
+                            </div>
+</div>
+</div>
+<div class="flex-1 bg-slate-50 dark:bg-background-dark/30 rounded-2xl flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-center bg-contain bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI3q9h4J69kSqDc2vDNEyCvhYa_c3nscKStmW2oq_CVV-h4hSLvQqbzs56wiDKToxoXeAoNQA1mEx2zaMpYfBDPDbM23HsloUA91_ILtzY2_ZawB2G1HjNZTSIUU1zzG8HG-ntp1xfjS9ZMbpaQ5kqfUE7dFCRBEAnZ5Y1_Tb8t5IdXEse0WDxxKLKFPK3hC3uWWztov968HLO3rR0RGfL6XKOjdzn4uJl9EKlpl3ufz0RjgNkE2m2PjAUmH0uTglQ8Lr-Z5ni0sU7')"></div>
+<div class="z-10 text-center">
+<div class="flex flex-col items-center gap-2">
+<div class="w-32 h-32 rounded-full border-4 border-primary/20 flex items-center justify-center bg-white dark:bg-slate-900 shadow-xl">
+<span class="material-symbols-outlined text-primary text-5xl">public</span>
+</div>
+<span class="text-xs font-black uppercase tracking-widest text-primary/60 mt-4">Geographic Heatmap</span>
+<p class="text-sm font-medium text-slate-400">Interactive Map Visualization Active</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-primary/5 shadow-sm flex flex-col">
+<h3 class="text-lg font-bold mb-1">Fund Allocation</h3>
+<p class="text-xs text-slate-500 font-medium mb-8">Transparency in every Rupee spent</p>
+<div class="flex-1 flex flex-col justify-center">
+<div class="relative w-48 h-48 mx-auto mb-8">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<circle class="stroke-slate-100 dark:stroke-slate-700" cx="18" cy="18" fill="none" r="16" stroke-width="4"></circle>
+<circle class="stroke-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="65, 100" stroke-width="4"></circle>
+<circle class="stroke-blue-500" cx="18" cy="18" fill="none" r="16" stroke-dasharray="15, 100" stroke-dashoffset="-65" stroke-width="4"></circle>
+<circle class="stroke-amber-500" cx="18" cy="18" fill="none" r="16" stroke-dasharray="20, 100" stroke-dashoffset="-80" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black">₹45M</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Total</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Organic Produce Procurement</span>
+</div>
+<span class="text-xs font-black">65%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Logistics &amp; Distribution</span>
+</div>
+<span class="text-xs font-black">15%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">Farmer Skill Development</span>
+</div>
+<span class="text-xs font-black">20%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<div class="xl:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-primary/5 shadow-sm">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-lg font-bold">Donation Transparency Feed</h3>
+<p class="text-xs text-slate-500 font-medium">Chronological log of recent distributions</p>
+</div>
+<button class="text-primary text-xs font-bold hover:underline">View All Distributions</button>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4 items-start relative pb-6 border-b border-slate-50 dark:border-slate-700 last:border-0 last:pb-0">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                                    24
+                                    <div class="absolute h-full w-px bg-slate-100 dark:bg-slate-700 left-1/2 top-10 -z-10"></div>
+</div>
+<span class="text-[9px] font-black uppercase tracking-tighter mt-1">OCT</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-sm">Pune Distribution Center</h4>
+<span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-black rounded uppercase">Delivered</span>
+</div>
+<p class="text-xs text-slate-500 mb-3">Allocated 5,000kg of organic lentils to 3 community kitchens. Verified by audit ID: F2F-PN-092.</p>
+<div class="flex gap-2">
+<div class="w-16 h-10 bg-slate-100 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1KqtOExnGbWZn1SMLXT29Dl6K4OSPJERnT-uim1iOIOAWz9h-jEVUlrwxEr2Ir9rRZhgCToOcOCriKcqROK_TEqJs6SELUGnecnFwwJbaViJqx6v_5r9UeBiQGQyWvWShY9r92OTyf0_LpdT-ZCzqMy3tXQEBVSN-1x5ZLmfpSfoUb2-Kk0mki6nq7uddvPPNKteGm50wM41MdtgdMYC6YtUFCF2Cr43d1URJQrg0-1ZUDFGEChS2EfOTm0JAZ4cgTj60grRq0c3x')"></div>
+</div>
+<div class="w-16 h-10 bg-slate-100 rounded-lg overflow-hidden">
+<div class="w-full h-full bg-center bg-cover" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiduOi9qLQQzSSdv6RrkDvJARdoHvbLR6PBdrbDD1hg2Sg7fc4HgIzILJhlRBJL0NFtTRMABkaL3G_fPMsWsUn1fg_6yz5opAyQH9udMR7T3MKOEvbnDyggSonj7tG3Q7KWwAQfFAFN1EisStUp3kzIONouvfSsIWqA_nT8D5euJF5fWyzykkVMe4U43JqtcGlmge9E4JyJ_FNXJ9zGEqN7_M9gwE7jXtO2q1GWZ_7B1V2abgQaFISn6KoQGXwIqYLxHDztbThEhYE')"></div>
+</div>
+<button class="h-10 px-3 bg-slate-50 dark:bg-slate-700 rounded-lg text-[10px] font-bold flex items-center gap-1.5 border border-slate-200 dark:border-slate-600">
+<span class="material-symbols-outlined text-sm">description</span>
+                                        Receipt
+                                    </button>
+</div>
+</div>
+</div>
+<div class="flex gap-4 items-start relative pb-6 border-b border-slate-50 dark:border-slate-700 last:border-0 last:pb-0">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold text-sm">
+                                    22
+                                    <div class="absolute h-full w-px bg-slate-100 dark:bg-slate-700 left-1/2 top-10 -z-10"></div>
+</div>
+<span class="text-[9px] font-black uppercase tracking-tighter mt-1">OCT</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-sm">Harya Farmers Hub</h4>
+<span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-black rounded uppercase">In Transit</span>
+</div>
+<p class="text-xs text-slate-500 mb-3">Procuring 12 metric tons of chemical-free wheat directly from farmer cooperatives.</p>
+<div class="flex items-center gap-3 text-[10px] font-bold text-slate-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">agriculture</span> 12 Farmers</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_shipping</span> 2 Trucks</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4 items-start relative">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-sm">
+                                    20
+                                </div>
+<span class="text-[9px] font-black uppercase tracking-tighter mt-1">OCT</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-sm">Monthly Audit Completed</h4>
+<span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-black rounded uppercase">Verified</span>
+</div>
+<p class="text-xs text-slate-500">Third-party audit by ImpactVerify Inc. confirmed 100% fund matching for Q3 2023.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-3xl p-8 border border-primary/5 shadow-sm">
+<h3 class="text-lg font-bold mb-1">Monthly Progress</h3>
+<p class="text-xs text-slate-500 font-medium mb-8">Meals served growth trend</p>
+<div class="h-64 flex items-end justify-between gap-2 px-2">
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/20 rounded-t-md hover:bg-primary transition-all cursor-pointer" style="height: 40%"></div>
+<span class="text-[10px] font-bold text-slate-400">JUN</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/20 rounded-t-md hover:bg-primary transition-all cursor-pointer" style="height: 55%"></div>
+<span class="text-[10px] font-bold text-slate-400">JUL</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/20 rounded-t-md hover:bg-primary transition-all cursor-pointer" style="height: 70%"></div>
+<span class="text-[10px] font-bold text-slate-400">AUG</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary rounded-t-md shadow-lg shadow-primary/20" style="height: 95%"></div>
+<span class="text-[10px] font-bold text-slate-900 dark:text-white">SEP</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-full bg-primary/20 rounded-t-md hover:bg-primary transition-all cursor-pointer" style="height: 85%"></div>
+<span class="text-[10px] font-bold text-slate-400">OCT</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-slate-50 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div>
+<p class="text-sm font-bold">+22% YoY Growth</p>
+<p class="text-[10px] text-slate-500">Exceeding platform goals for 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-slate-900 text-white h-10 flex items-center px-8 relative overflow-hidden whitespace-nowrap">
+<div class="flex items-center gap-2 mr-12 text-xs font-bold shrink-0">
+<span class="flex h-2 w-2 rounded-full bg-primary"></span>
+                LIVE UPDATES:
+            </div>
+<div class="flex gap-16 text-xs font-medium animate-marquee">
+<span class="flex items-center gap-2"><span class="text-primary">●</span> New donation of ₹5,000 from Rahul S.</span>
+<span class="flex items-center gap-2"><span class="text-primary">●</span> Truck #42 arrived at Mumbai Hub</span>
+<span class="flex items-center gap-2"><span class="text-primary">●</span> New organic farm registered in Punjab: GreenValley Agri</span>
+<span class="flex items-center gap-2"><span class="text-primary">●</span> Audit Report for F2F-PN-092 confirmed</span>
+<span class="flex items-center gap-2"><span class="text-primary">●</span> 500 meals dispatched to Bihar Flood Relief</span>
+</div>
+</footer>
+</main>
+</div>
+
+</body></html>

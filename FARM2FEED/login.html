@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farm2Feed - Login &amp; Signup</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "beige-light": "#FDFBF7",
+                        "sage-soft": "#e7f3eb",
+                        "indian-green": "#0d5c2c"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex min-h-screen w-full flex-col lg:flex-row">
+<!-- Left Side: Visual/Branding (Hidden on mobile) -->
+<div class="relative hidden lg:flex lg:w-1/2 flex-col justify-between p-12 overflow-hidden bg-indian-green">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0 opacity-60 bg-cover bg-center" data-alt="Lush green organic farmland in rural India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnUrnhufLTG5GoRrh83W93BrMyrcyqr9Vvsu7C0u32PV2V330cTwJ1-6l6r6-VYuwGIHMtGs-0ukFbLKLJPnahGPkGAtpXINlaMm0xpUBlbNAZT42Y6YPtR2PXeOeKxChX0m18aM4iM-twqZrjDCRIX7HASFPEjyH0TRBRa31aQSXbCFEea93l-3E14xK5LghPjJYroWWN4YYMxqjoziDMGS0XPwhRXTCemoynBfcUvnd7klEYtZIVMZnSfn9mG0JYn6AhGeRMp25K')">
+</div>
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-indian-green via-transparent to-indian-green/40"></div>
+<!-- Logo & Brand -->
+<div class="relative z-20 flex items-center gap-3">
+<div class="bg-primary text-background-dark p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl font-bold">potted_plant</span>
+</div>
+<h1 class="text-white text-2xl font-extrabold tracking-tight">Farm2Feed</h1>
+</div>
+<!-- Testimonial/Message Area -->
+<div class="relative z-20 max-w-lg mb-12">
+<div class="glass-effect p-8 rounded-2xl text-white">
+<h2 class="text-4xl font-black leading-tight mb-4">Connecting Indian Farmers to Every Plate</h2>
+<p class="text-lg text-white/90 font-medium mb-6 leading-relaxed">
+                        Join the movement to end hunger through organic roots. Experience the purity of organic farming directly from the source.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<img class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Satisfied customer avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpgMAMrKD4NLOb3nTJuJJH83vOrFzYefXWQLznLGkwj7XnddadER-_2MBD88AGNnsd8aHa1RlUlpF-1jdvN9jSOo51KliFOTP1P91Ev4WRFpWUtbXTNCVYczaD6AH73wZ_yFKZk3EMKKka-XvOuOMpjfxk17zK_o0szajSp34FaaUPudODZh8poQog5MBf6NhtNQV9Mdif71VfEk9t5HjX0FfhqSmBDxOnwnl0zUbrtyvFHxMy6tolnUiHd9oeQECUBllTjUV9H1Q1"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Satisfied customer avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvyw6cykEWFdtBcklb85TVYn3zkpba5lDmPGs6ps3rTRNKYLeQ4TSNod_9O1CIf_97FTdTCigbt9janPTxzfXzu8FfaUPD-K9ncuaIUAKsVIrOD4oV48zpfw08UsOZhMGBCm1Yl1m2nffpxc0w9qhN78y0FU58RT2YHFylwoPRPRbys69p4VRlFN_uHDJ6EH95aJ9WO6QCnfJdZwx25DVnX8B6X2N2H4jJmcNOMOnSEoI1jEsySem5R1kiwLF44egH1I3rmD5y2_at"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary" data-alt="Satisfied customer avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3a7rexnxXmXH_F2NrvGaRiLVedt-vis5KK_njhXdC-V5CmX3ecDmk0pnXk8l8yjMV-aG7ClTDU9lYBkjHwuAPe9szin6F73JmLGA3A9nv2ptZqdeivV7vTDhJSiyXVhBvAvHDtvZ7KDv7LZzt2umogRkJHi-pwOaxSX08hcO9KM8m2dqY2SvEvCxVYnDGaLaN-4ZN6wICP-vf27NzohRnC5VRW66XbcNkztQkLudnP2FTI3y-85NZk9OhwG65vSHwU7bVfV8vgYbn"/>
+</div>
+<p class="text-sm font-semibold tracking-wide">+10k Indians trust us</p>
+</div>
+</div>
+</div>
+<!-- Footer Links (Left) -->
+<div class="relative z-20 flex gap-6 text-white/70 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+<!-- Right Side: Auth Form -->
+<div class="flex-1 flex flex-col items-center justify-center p-6 sm:p-12 bg-white dark:bg-background-dark">
+<div class="w-full max-w-md">
+<!-- Mobile Header (Visible only on mobile) -->
+<div class="flex items-center gap-3 lg:hidden mb-10">
+<div class="bg-primary text-background-dark p-2 rounded-lg">
+<span class="material-symbols-outlined text-2xl font-bold">potted_plant</span>
+</div>
+<h1 class="text-slate-900 dark:text-white text-xl font-extrabold tracking-tight">Farm2Feed</h1>
+</div>
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Welcome Back</h2>
+<p class="text-slate-500 dark:text-slate-400">Join the movement to support local agriculture.</p>
+</div>
+<!-- Tabs: Login/Signup -->
+<div class="flex bg-sage-soft/30 dark:bg-slate-800 p-1.5 rounded-xl mb-8">
+<button class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all bg-white dark:bg-slate-700 shadow-sm text-slate-900 dark:text-white">
+                        Login
+                    </button>
+<button class="flex-1 py-2.5 text-sm font-bold rounded-lg transition-all text-slate-500 dark:text-slate-400 hover:text-slate-700">
+                        Sign Up
+                    </button>
+</div>
+<!-- Auth Form -->
+<form class="space-y-6">
+<!-- Indian Mobile Number Field -->
+<div>
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Mobile Number</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="text-slate-400 font-medium">+91</span>
+</div>
+<input class="block w-full pl-14 pr-4 py-4 bg-background-light dark:bg-slate-800 border-transparent focus:border-primary focus:ring-0 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 transition-all shadow-sm" placeholder="Enter your mobile number" type="tel"/>
+</div>
+</div>
+<!-- Password Field -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300">Password</label>
+<a class="text-xs font-bold text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<input class="block w-full px-4 py-4 bg-background-light dark:bg-slate-800 border-transparent focus:border-primary focus:ring-0 rounded-xl text-slate-900 dark:text-white placeholder-slate-400 transition-all shadow-sm" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-400" type="button">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600 dark:text-slate-400">Remember me for 30 days</label>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-extrabold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all transform active:scale-[0.98]" type="submit">
+                        Sign In
+                    </button>
+</form>
+<!-- Divider -->
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center"><span class="w-full border-t border-slate-200 dark:border-slate-700"></span></div>
+<div class="relative flex justify-center text-xs uppercase"><span class="bg-white dark:bg-background-dark px-2 text-slate-400 font-bold">Or continue with</span></div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-1 gap-4">
+<button class="flex items-center justify-center gap-3 w-full px-4 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all group">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu2ltUc2RT0eVWmOe32Ml7fMFl1YqlTdJktOEvj-EkJFpcEznvYHnKzjRnOjxPpBAEbcN7De458E_oEEoMJvAAiWrHCYmWFSG79gzXwvs6ucM1p7gmJ1Sz7AukWkvdbLe5-k1nHtFe_Z0IN6rHIZlutISqzMOEwTguDkrWfmYS_sbV8KR7rxuN8geH9rw23RqIF4JLezAef0aBIGQGNxBNnijY10e8Lmb9Mjj2VPHfmEgDyOmJH1ytOneq57lUE3o-WHFaYPtfTSmw"/>
+<span class="text-slate-700 dark:text-slate-200 font-bold text-sm group-hover:text-slate-900 dark:group-hover:text-white">Continue with Google</span>
+</button>
+</div>
+<!-- Language Toggle & Bottom Links -->
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100 dark:border-slate-800 pt-6">
+<div class="flex items-center gap-2 text-slate-500 text-sm font-medium">
+<span class="material-symbols-outlined text-lg">language</span>
+<select class="bg-transparent border-none focus:ring-0 cursor-pointer text-slate-600 dark:text-slate-400 text-sm font-bold">
+<option>English</option>
+<option>Hindi (हिन्दी)</option>
+<option>Marathi (मराठी)</option>
+</select>
+</div>
+<div class="flex gap-4">
+<a class="text-xs font-bold text-slate-400 hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-xs font-bold text-slate-400 hover:text-primary transition-colors" href="#">Safety</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
